@@ -235,4 +235,153 @@ h1 {
     transform: scale(1.35) rotate(4deg)
   }
 }
-/* STYLE NAV BAR */
+/* ABOUT PAGE */
+.room-banner {
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100vw;
+  height: 75vh;
+  object-fit: cover;
+  object-position: center -5%;
+  z-index: 1;
+}
+
+.portfolio-header {
+  position: relative;
+  top: 0;  
+  width: 100%;
+  background: white;
+  padding: 10px 0 20px 0;
+  z-index:  100;
+  text-align: center;
+}
+.showcase-logo {
+  width: 500px;
+  height: auto;
+  margin: 0 0 20px 0;
+  padding-top: 30px;
+  filter: brightness(0) saturate(100%) invert(25%) sepia(20%) saturate(1000%) hue-rotate(350deg) brightness(90%) contrast(95%);
+}
+.centered-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
+  padding: 15px 40px;
+}
+.centered-nav .nav-link {
+  color: #442625;
+  text-decoration: none;
+  font-size:16 px;
+  font-weight: 400; 
+  transition: color 0.3s ease, transform 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.centered-nav .nav-link:hover {
+  color: #6a4d4b;
+  transform: translateY(-2px);
+}
+.content-section {
+  position: relative;
+  top:0;
+  background: white;
+  padding: 60px 40px;
+  z-index: 100;
+  min-height: 40vh;
+}
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.content-title {
+  font-size: 36px;
+  font-weight: 600;
+  color: #442625;
+  margin-bottom: 30px;
+}
+.content-text {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #442625;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.portfolio-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  padding: 20px 40px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.portfolio-title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600; 
+  color: white;
+}
+.nav-links {
+  display: flex;
+  gap: 30px;
+  margin-top: 15px;
+  margin-right: 10px;
+}
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+.nav-link:hover {
+  color: rgba(255,255,255,0.8);
+}
+
+.about-section,
+.skills-section,
+.showcase-section {
+  margin-top: 100px;
+  padding: 400px 20px;
+}
+
+.about-section {
+  margin-top: 75vh;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #442625;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.contact-title {
+  text-align: left;
+  font-weight: 800;
+  margin-top: -650px;
+  margin-bottom: 30px;
+}
+
+.about-title {
+  text-align: left; 
+}
