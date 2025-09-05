@@ -99,4 +99,140 @@ h1 {
   transition: all 0.2s ease;
   pointer-events: auto;
 }
+
+.login-button:hover {
+  transform: translate(-50%, 50%) scale(0.98);
+}
+.login-image {
+  width: 240px;
+  height: auto;
+  display: block;
+  transition: filter 0.2s ease;
+  filter: brightness(1) saturate(1);
+  pointer-events: none;
+}
+.login-button:hover .login-image {
+  filter: brightness (1.1) saturate (1.1);
+}
+.login-button:active .login-image {
+  filter: brightness(0.9);
+}
+
+.shine-image {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  z-index: 450;
+  object-fit: cover;
+  animation: shineShimmer 14s ease-in-out infinite;
+  transform: scale (1);
+}
+
+/* CALENDAR */ 
+.calendar-widget {
+  position: fixed;
+  bottom: 40px;
+  left: 60px;
+  background: transparent;
+  border-radius: 0;
+  padding: 20px;
+  box-shadow: none;
+  backdrop-filter: none;
+  border: none;
+  z-index: 500;
+  min-width: 150px;
+  text-align: left;
+}
+
+.calendar-date {
+  font-size: 56px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 20px;
+}
+.calendar-date #month {
+  color: white;
+  margin-right: 16px;
+}
+.calendar-date #day {
+  color: white;
+}
+.calendar-time {
+  font-size: 96px;
+  color: white;
+  font-weight: 600;
+}
+
+/* ANIMATIONS */
+@keyframes gentleSway {
+  0%, 100% {
+    transform: rotate(0deg) scale (1) translateX(0px) translateY(0px);
+  }
+  25% {
+    transform: rotate(3deg) scale(1.008) translateX(12px) translateY(-6px);
+  }
+  50% {
+    transform: rotate(-2.5deg) scale(1.006) translateX(-10px) translateY(4px);
+  }
+  75% {
+    transform: rotate(4deg) scale(1.01) translateX(15px) translateY(-8px);
+  }
+}
+@keyframes cloudFloatLeft {
+  0%, 100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(50px);
+  }
+}
+
+@keyframes cloudFloatRight {
+  0%, 100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-60px);
+  }
+}
+@keyframes sparkleGlow {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(1) rotate (0deg);
+    filter: brightness(2.5) contrast(2) saturate(1.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale (1.15) rotate(-3deg);
+    filter: brightness(4) contrast(3) saturate (2.5);
+  }
+  75% {
+    opacity: 1;
+    transform: scale(1.08) rotate(8deg);
+    filter: brightness(3.5) contrast(2.8) saturate(2.2);
+  }
+}
+@keyframes shineShimmer {
+  0%, 100% {
+    opacity: 0.9;
+    filter: brightness(6) contrast(4) saturate(3) hue-rotate(0deg);
+  }
+  25% {
+    opacity: 1;
+    filter: brightness(8) contrast(5) saturate(4) hue-rotate(5deg);
+    transform: scale(1.4) rotate(2deg);
+  }
+  50% {
+    opacity: 1;
+    filter: brightness(10) contrast(6) saturate(5) hue-rotate(10deg);
+    transform: scale(1.5) rotate(-3deg);
+  }
+  75% {
+    opacity: 1;
+    filter: brightness(9) contrast(5.5) saturate(4.5) hue-rotate(7deg);
+    transform: scale(1.35) rotate(4deg)
+  }
+}
 /* STYLE NAV BAR */
