@@ -234,3 +234,45 @@ switch(playerType) {
     }
     break;
 }
+
+if
+((window.location.pathname.includes('music.html')|| window.location.href.includes('about.html')) && sessionStorage.getItem('showTransition') === 'true') {
+  sessionStorage.removeItem('showTransition');
+
+  const pageOverlay = document.createElement('div');
+  pageOverlay.style.cssText = `
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  `;
+
+  const intermissionGif = document.createElement('img');
+  intermissionGif.src = 'intermission.gif';
+  intermissionGif.style.cssText = `
+  max-width: 150px;
+  max-height: 150px;
+  opacity: 1;
+  transition: opacity 0.8s ease-in-out;
+  `;
+  pageOverlay.appendChild(intermissionGif);
+  document.body.appendChild(pageOverlay);
+
+  setTimeout(() => {
+    pageOverlay.style.opacity = '0';
+  }, 1200);
+
+setTimeout(() => {
+  if (pageOverlay.parentNode) {
+    pageOverlay.parentNode.removeChild(pageOverlay);
+  }
+}, 2200);
+}
