@@ -412,3 +412,98 @@ h1 {
   height: auto;
   border-radius: 10px;
 }
+.white-divider {
+  width: 80%;
+  height: 2px;
+  background: white;
+  margin: 60px auto;
+}
+.music-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+.skills-grid {
+  flex: 1;
+}
+.records-container {
+  display: grid;
+  grid-template-columns: 1fr, 1fr;
+  gap: 30px;
+  margin-right: 50px;
+  justify-items: center;
+  margin-top: -80px;
+  max-width: 500px;
+}
+.record-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.record-image {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.record-label {
+  font-size: 14px;
+  color: #442625;
+  margin: 0;
+  text-align: center;
+  font-weight: 500;
+}
+
+.record-image:hover {
+  animation: spin 1s linear infinite;
+}
+.record-image.playing {
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+.music-image {
+  flex-shrink: 0;
+  margin-left: 50px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.recordplayer-image {
+  width: 680px;
+  height: auto;
+  border-radius: 10px;
+  margin-top: -50px;
+  position: relative;
+  z-index: 10;
+}
+.player-label {
+  font-size: 16px;
+  color: #442625;
+  margin: 15px 0 0 0;
+  text-align: center;
+  font-weight: 500;
+}
+.player-image {
+  width: 670px;
+  height: auto;
+  border-radius: 10px;
+  display: none;
+  position: absolute;
+  z-index: 1;
+  top: -50px;
+  left: 5px;
+}
+.player-image.active {
+  display: block;
+}
