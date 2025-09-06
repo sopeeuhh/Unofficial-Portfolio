@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>Music - Sophia's Portfolio</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- link the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- link the webpage's JavaScript file -->
+    <script src="/script.js" defer></script>
+
+  </head>
+  <!--NAV BAR-->
+  <body>
+    <header class="portfolio-header">
+      <img src="logo2.png" alt="Sophia's Showcase" class="showcase-logo" onclick="goBackToLanding()" style="cursor: pointer;">
+      <nav class="centered-nav">
+        <a href="about.html" class="nav-link">About</a>
+        <a href="music.html" class="nav-link">Music</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link">Contact Me</a>
+      </nav>
+    </header>
+
+    <!--MUSIC-->
+    <section class="skills-section">
+      <div class="section-container">
+        <div class="music-content">
+          <div class="records-container">
+            <div class="record-item">
+              <img src="magnoliarecord.png" alt="magnolia record image" class="record-image"
+                onclick="showPlayer('magnolia')">
+              <p class="record-label">⋆.˚ magnolia ❀ - laufey</p>
+      </div>
+            <div class="record-item".
+              <img src="lovergirlrecord.png" alt="lover girl record image" class="record-image" onclick="showPlayer('lovergirl')">
+              <p class="record-lavel">⋆𐙚 lovergirl ♡ - laufey</p>
+            </div>
+            <div class="record-item">
+              <img src="bonfirerecord.png" alt="bonfire record image" class="record-image" onclick="showPlayer('bonfire')">
+              <p class="record-label">ʚଓ bonfire ꩜ - wave2earth</p>
+              </div>
+          </div>
+          <div class="music-image">
+            <img src="recordplayer.png" alt="record player" class="recordplayer-image" id="default-player">
+            <img src="magnoliaplayer.png" alt="Magnolia player" class="player-image" id="magnolia-player">
+            <img src= "lovergirlplayer.png" alt="Lovergirl player" class= "player-image" id="lovergirl-player">
+            <img src="bonfireplayer.png" alt="Bonfire player" class="player-image" id="bonfire-player">
+            <p class="player-label">°˖➴ click on the record discs to play the song ˙⋆✮</p>
+            <audio id= "magnolia-audio" preload="auto"> 
+            <source src="Laufey - Magnolia (Official Audio) 4.mp3" type="audio/mpeg">
+              </audio>
+            <audio id="lovergirl-audio" preload="auto">
+              <source src="Laufey - Lover Girl (Official Music Video).mp3" type="audio/mpeg">
+            </audio>
+            <audio id="bonfire-audio" preload="auto">
+              <source src="wave2earth - bonfire (Lyrics).mp3" type="audio/mpeg">
+            </audio>
+          </div>
+          </div>
+      </div>
+    </section>
+  </body>
+</html>

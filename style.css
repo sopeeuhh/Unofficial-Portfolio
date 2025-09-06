@@ -384,4 +384,31 @@ h1 {
 
 .about-title {
   text-align: left; 
+  font-weight: 800;
+  margin-top: -280px;
+  margin-bottom: 30px;
+}
+
+.about-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.about-text {
+  margin-top: 0px;
+  padding-right: 150px;
+  font-size: 16px;
+  line-height: 1.8;
+  flex: 1;
+}
+.about-image {
+  flex-shrink: 0;
+  margin-top: -40px;
+  position: realtive;
+  left: -50px;
+}
+.about-gif {
+  width: 320px;
+  height: auto;
+  border-radius: 10px;
 }
