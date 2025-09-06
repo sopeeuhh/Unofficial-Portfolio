@@ -1,6 +1,5 @@
 /* .js files add interaction to your website */
 
-// CALENDAR
 function updateCalendar() {
   const now = new Date();
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
@@ -18,12 +17,11 @@ function updateCalendar() {
   const dayElement = document.getElementById('day');
   const timeElement = document.getElementById('time');
 
-    if (monthElement) monthElement.textContent = month;
-    if (dayElement) dayElement.textContent = day;
-    if (timeElement) timeElement.textContent = `${displayHours}:${displayMinutes} ${ampm}`;
-  }
+  if (monthElement) monthElement.textContent = month;
+  if (dayElement) dayElement.textContent = day;
+  if (timeElement) timeElement.textContent = `${displayHours}:${displayMinutes} ${ampm}`;
+}
 
-// NAVIGATION
 function goToMainPage() {
   const overlay = document.createElement('div');
   overlay.style.cssText = `
@@ -53,7 +51,6 @@ function goToMainPage() {
   overlay.appendChild(intermissionGif);
   document.body.appendChild(overlay);
 
-
   setTimeout(() => {
     overlay.style.opacity = '1';
   }, 100);
@@ -63,36 +60,34 @@ function goToMainPage() {
   }, 600);
 
   setTimeout(() => {
-      sessionStorage.setItem('showTransition', 'true');
-      window.location.href = 'about.html';
-    }, 1500);
-  }
+    window.location.href = 'portfolio.html';
+  }, 1500);
+}
 
 function goToPortfolio() {
-
   const overlay = document.createElement('div');
   overlay.style.cssText = `
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: white;
-  z-index: 9999;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   `;
 
   const intermissionGif = document.createElement('img');
   intermissionGif.src = 'intermission.gif';
   intermissionGif.style.cssText = `
-  max-width: 150 px;
-  max-height: 150px;
-  opacity: 0;
-  transition: opacity 0.8s ease-in-out;
+    max-width: 150px;
+    max-height: 150px;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
   `;
 
   overlay.appendChild(intermissionGif);
@@ -105,27 +100,28 @@ function goToPortfolio() {
   setTimeout(() => {
     intermissionGif.style.opacity = '1';
   }, 600);
-  
+
   setTimeout(() => {
     sessionStorage.setItem('showTransition', 'true');
-    window.location.href = 'about.html';},1500);
-  }
+    window.location.href = 'about.html';
+  }, 1500);
+}
 
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function() {
   updateCalendar();
   setInterval(updateCalendar, 60000);
 
-  const portfolioLink = document.querySelector('a[href="portfolio.html"]')
-if (portfolioLink) {
-  portfolioLink.addEventListener('click', function(e) {
-    e.preventDefault();
-    goToPortfolio();
-  });
-}
-  });
+  const portfolioLink = document.querySelector('a[href="portfolio.html"]');
+  if (portfolioLink) {
+    portfolioLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      goToPortfolio();
+    });
+  }
+});
 
 window.addEventListener('popstate', function(event) {
-  if (this.window.location.pathname.includes('portfolio.html')) {
+  if (window.location.pathname.includes('portfolio.html') || window.location.href.includes('portfolio.html')) {
     event.preventDefault();
     goBackToLanding();
   }
@@ -133,19 +129,19 @@ window.addEventListener('popstate', function(event) {
 
 function goBackToLanding() {
   const overlay = document.createElement('div');
-  overlay.style.cssText= `
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: white;
-  z-index: 9999;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overlay.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   `;
 
   const intermissionGif = document.createElement('img');
@@ -156,7 +152,7 @@ function goBackToLanding() {
     opacity: 0;
     transition: opacity 0.8s ease-in-out;
   `;
-  
+
   overlay.appendChild(intermissionGif);
   document.body.appendChild(overlay);
 
@@ -178,7 +174,6 @@ function showPlayer(playerType) {
   const lovergirlPlayer = document.getElementById('lovergirl-player');
   const bonfirePlayer = document.getElementById('bonfire-player');
 
-
   const magnoliaAudio = document.getElementById('magnolia-audio');
   const lovergirlAudio = document.getElementById('lovergirl-audio');
   const bonfireAudio = document.getElementById('bonfire-audio');
@@ -187,9 +182,9 @@ function showPlayer(playerType) {
   const lovergirlRecord = document.querySelector('img[onclick="showPlayer(\'lovergirl\')"]');
   const bonfireRecord = document.querySelector('img[onclick="showPlayer(\'bonfire\')"]');
 
-if(magnoliaPlayer) magnoliaPlayer.classList.remove('active');
-if (lovergirlPlayer) lovergirlPlayer.classList.remove('active');
-if (bonfirePlayer) bonfirePlayer.classList.remove('active');
+  if (magnoliaPlayer) magnoliaPlayer.classList.remove('active');
+  if (lovergirlPlayer) lovergirlPlayer.classList.remove('active');
+  if (bonfirePlayer) bonfirePlayer.classList.remove('active');
 
   if (magnoliaRecord) magnoliaRecord.classList.remove('playing');
   if (lovergirlRecord) lovergirlRecord.classList.remove('playing');
@@ -208,79 +203,75 @@ if (bonfirePlayer) bonfirePlayer.classList.remove('active');
     bonfireAudio.currentTime = 0;
   }
 
-
-      switch(playerType) {
-        case 'magnolia':
-          if (magnoliaPlayer) magnoliaPlayer.classList.add('active');
-          if (magnoliaRecord) magnoliaRecord.classList.add('playing');
-          if (magnoliaAudio) {
-            magnoliaAudio.play().catch(error => {
-              console.log('Audio playback failed:', error);
-            });
-            
-          magnoliaAudio.onended = () => {
-              if (magnoliaRecord) magnoliaRecord.classList.remove('playing');
-            };
-          }
-      break;
-      case 'lovergirl':
-        if (lovergirlPlayer) lovergirlPlayer.classList.add('active');
-        if (lovergirlRecord) lovergirlRecord.classList.add('playing');
-        if (lovergirlAudio) {
-          lovergirlAudio.play().catch(error => {
-            console.log('Audio playback failed:', error);
-          });
-          
-      lovergirlAudio.onended = () => {
-        if (lovergirlRecord) lovergirlRecord.classList.remove('playing');
-      };
+  switch(playerType) {
+    case 'magnolia':
+      if (magnoliaPlayer) magnoliaPlayer.classList.add('active');
+      if (magnoliaRecord) magnoliaRecord.classList.add('playing');
+      if (magnoliaAudio) {
+        magnoliaAudio.play().catch(error => {
+          console.log('Audio playback failed:', error);
+        });
+        magnoliaAudio.onended = () => {
+          if (magnoliaRecord) magnoliaRecord.classList.remove('playing');
+        };
       }
       break;
-      case 'bonfire':
+    case 'lovergirl':
+      if (lovergirlPlayer) lovergirlPlayer.classList.add('active');
+      if (lovergirlRecord) lovergirlRecord.classList.add('playing');
+      if (lovergirlAudio) {
+        lovergirlAudio.play().catch(error => {
+          console.log('Audio playback failed:', error);
+        });
+        lovergirlAudio.onended = () => {
+          if (lovergirlRecord) lovergirlRecord.classList.remove('playing');
+        };
+      }
+      break;
+    case 'bonfire':
       if (bonfirePlayer) bonfirePlayer.classList.add('active');
       if (bonfireRecord) bonfireRecord.classList.add('playing');
       if (bonfireAudio) {
-      bonfireAudio.play().catch(error => {
-        console.log('Audio playback failed:', error);
-      });
-  bonfireAudio.onended = () => {
-            if (bonfireRecord) bonfireRecord.classList.remove('playing');
-          };
-        }
-        break;
-    }
+        bonfireAudio.play().catch(error => {
+          console.log('Audio playback failed:', error);
+        });
+        bonfireAudio.onended = () => {
+          if (bonfireRecord) bonfireRecord.classList.remove('playing');
+        };
+      }
+      break;
   }
+}
 
-  if ((window.location.pathname.includes('about.html') || window.location.href.includes('about.html')) &&
+if ((window.location.pathname.includes('about.html') || window.location.href.includes('about.html')) &&
     sessionStorage.getItem('showTransition') === 'true') {
-    
   sessionStorage.removeItem('showTransition');
 
-    const pageOverlay = document.createElement('div');
-    pageOverlay.style.cssText = `
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: white;
-      z-index: 9999;
-      opacity: 1;
-      transition: opacity 1s ease-in-out;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    `;
+  const pageOverlay = document.createElement('div');
+  pageOverlay.style.cssText = `
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  `;
 
   const intermissionGif = document.createElement('img');
   intermissionGif.src = 'intermission.gif';
   intermissionGif.style.cssText = `
-  max-width: 150px;
-  max-height: 150px;
-  opacity: 1;
-  transition: opacity 0.8s ease-in-out;
+    max-width: 150px;
+    max-height: 150px;
+    opacity: 1;
+    transition: opacity 0.8s ease-in-out;
   `;
-    
+
   pageOverlay.appendChild(intermissionGif);
   document.body.appendChild(pageOverlay);
 
@@ -288,10 +279,9 @@ if (bonfirePlayer) bonfirePlayer.classList.remove('active');
     pageOverlay.style.opacity = '0';
   }, 1200);
 
-setTimeout(() => {
-  if (pageOverlay.parentNode) {
-    
-    pageOverlay.parentNode.removeChild(pageOverlay);
-  }
-}, 2200);
+  setTimeout(() => {
+    if (pageOverlay.parentNode) {
+      pageOverlay.parentNode.removeChild(pageOverlay);
+    }
+  }, 2200);
 }
