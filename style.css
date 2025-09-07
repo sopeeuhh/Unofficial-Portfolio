@@ -254,6 +254,8 @@ body {
     transform: scale(1.35) rotate(4deg);
   }
 }
+
+
 /* ABOUT PAGE */
 .room-banner {
   position: absolute;
@@ -409,8 +411,8 @@ body {
 .about-title {
   text-align: left; 
   font-weight: 800;
-  margin-top: -280px;
-  margin-bottom: 30px;
+  margin-top: -650px;
+  margin-bottom: -10px;
 }
 
 .about-content {
@@ -419,7 +421,7 @@ body {
   gap: 20px;
 }
 .about-text {
-  margin-top: 0px;
+  margin-top: 20px;
   padding-right: 150px;
   font-size: 16px;
   line-height: 1.8;
@@ -459,7 +461,7 @@ body {
   gap: 30px;
   margin-right: 50px;
   justify-items: center;
-  margin-top: -80px;
+  margin-top: -400px;
   max-width: 500px;
 }
 
@@ -516,7 +518,7 @@ body {
   width: 680px;
   height: auto;
   border-radius: 10px;
-  margin-top: -50px;
+  margin-top: -300px;
   position: relative;
   z-index: 10;
 }
@@ -541,6 +543,7 @@ body {
 
 .player-image.active {
   display: block;
+  transform: translateY(-250px);
 }
 
 /*RESPONSIVE */
